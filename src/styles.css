@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+.center {
+  position: fixed;
+  z-index: 999999;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+.loading {
+  position: absolute;
+  font-weight: 800;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wave {
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(45deg, cyan, #fff);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url("https://images.unsplash.com/photo-1518022525094-218670c9b745?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: black;
+}
+
+.container {
+  padding: 30px 50px;
+}
+.timezone {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+.timezone #time {
+  font-size: 70px;
+  text-align: center;
+}
+.timezone #ampm {
+  font-size: 30px;
+  margin-left: -15px;
+}
+.timezone #date {
+  font-size: 30px;
+  margin-top: -20px;
+}
+
+.search {
+  position: absolute;
+  width: 240px;
+  top: 5%;
+  right: 5%;
+  padding: 5px;
+  color: white;
+  background-color: white;
+  border-radius: 25px;
+}
+.search input[type="text"] {
+  padding: 10px;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 25px;
+  width: 190px;
+}
+.search button {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: rgb(31, 29, 29);
+  color: white;
+}
+
+#place {
+  display: flex;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6vw;
+  font-weight: 800;
+  letter-spacing: 5px;
+  color: white;
+}
+.temp span {
+  font-size: 2vw;
+  margin-left: -20px;
+  font-weight: 1000;
+}
+
+#weatherName {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3vw;
+  font-weight: 500;
+  color: white;
+}
+.modal {
+  display: flex;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 47%;
+  left: 50%;
+  width: 550px;
+  height: 300px;
+  align-items: center;
+  justify-content: space-around;
+  visibility: hidden;
+}
+.innermodel {
+  display: flex;
+  flex-flow: column wrap;
+  width: 500px;
+  height: 250px;
+  color: black;
+  font-size: 40px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+.innermodel img {
+  width: 90px;
+}
+.modal.open {
+  visibility: visible;
+}
+.closebtn {
+  width: 25px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+.weatherInfo {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0%;
+  background-color: rgba(10, 10, 10, 0.5);
+}
+.weatherItems {
+  border-radius: 5%;
+  border: 1px solid white;
+  padding: 5px 40px;
+  margin: 30px;
+  font-size: 25px;
+  font-weight: 800;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  flex-flow: wrap column;
+  justify-content: space-around;
+}
+.weatherItems img {
+  width: 100px;
+  padding: 20px;
+}
+.weatherItems div {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: red;
+}
+.weatherItems span {
+  font-size: 20px;
+}
+.sidebtn {
+  display: none;
+}
+
+/* RESPONSIVE WEB SCREEEN */
+@media only screen and (max-width: 1200px) {
+  .weatherItems {
+    padding: 2px 15px;
+    margin: 20px 15px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .wave {
+    width: 3px;
+    height: 80px;
+    margin: 8px;
+    border-radius: 16px;
+  }
+  .container {
+    padding: 15px 25px;
+  }
+  .timezone {
+    white-space: nowrap;
+    max-width: 100%;
+    left: 50%;
+    top: 11%;
+    transform: translate(-50%, -50%);
+  }
+  .timezone #time {
+    font-size: 50px;
+  }
+  .timezone #ampm {
+    font-size: 18px;
+    margin-left: -13px;
+  }
+  .timezone #date {
+    font-size: 20px;
+  }
+  .search {
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal {
+    transform: translate(-50%, -50%);
+    top: 39%;
+    left: 50%;
+    width: 310px;
+    height: 230px;
+  }
+  .innermodel {
+    width: 270px;
+    height: 200px;
+    font-size: 20px;
+  }
+  .innermodel img {
+    width: 50px;
+  }
+  .closebtn {
+    width: 20px;
+    top: -2%;
+    right: -1%;
+  }
+
+  #place {
+    top: 42%;
+    font-size: 8vw;
+    font-weight: 800;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+  #weatherName {
+    top: 50%;
+    font-size: 7vw;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+  }
+  .temp span {
+    margin-left: -2px;
+    font-size: 4vw;
+  }
+  .weatherInfo {
+    justify-content: start;
+    align-items: none;
+    overflow-y: scroll;
+  }
+  .weatherItems {
+    padding: 2px 15px;
+    margin: 20px 15px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .weatherItems div {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  .weatherItems span {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  .weatherItems img {
+    margin: -5px;
+    width: 90px;
+  }
+  .sidebtn.right {
+    display: block;
+    width: 25px;
+    margin: 0px -12px 0px 3px;
+  }
+  .sidebtn.left {
+    display: block;
+    width: 25px;
+    margin: 0px 3px 0px -12px;
+  }
+}
